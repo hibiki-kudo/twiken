@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ツイ検</title>
+</head>
+<body>
+<p>キーワード検索</p>
+<form method="post">
+    キーワード
+    <input type="text" name="keyword"><br>
+    いいねの数
+    <input type="number" name="favorite"><br>
+    RTの数
+    <input type="number" name="rt"><br>
+    いつから
+    <input type="date" name="since"><br>
+    投稿の種類
+    <input type="radio" name="content" value="0">なし
+    <input type="radio" name="content" value="1">画像
+    <input type="radio" name="content" value="2">動画
+    <input type="radio" name="content" value="3">リンク<br>
+    <input type="submit" value="検索">
+</form>
+
+<h1>検索結果</h1>
+<li> {{ keyword }}で、いいねが{{ favorite }}以上、RTが{{ rt }}以上、{{ since }}以降の{{ content }}ツイートを表示します。</li>
+<!--検索結果のツイートを表示-->
+<!--検査結果をシェアするボタン-->
+<!--検索画面-->
+{% for result in results %}
+{% - result[0] is "" +%}{% continue %}{%- endif +%}
+<b><font size="4">{{result[0]}}</font></b><br>
+@{{result[1]}}<br>
+<img src="{{result[2]}}" width="70" height="70"><br>
+{{result[3]}}<br>
+{{result[4]}}<br><br>
+{% endfor %}
+
+
+<form action="/scroll">
+    <input type="submit" value="更に読み込む">
+</form>
+</body>
+</html>
