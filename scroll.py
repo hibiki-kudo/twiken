@@ -13,31 +13,32 @@ HEADERS_LIST = [
 ]
 
 HEADER = {'User-Agent': random.choice(HEADERS_LIST)}
-BASE_URI = "https://twitter.com/i/search/timeline"
+
+
+# BASE_URI = "https://twitter.com/i/search/timeline"
 
 
 class Twitter_scroll:
 
     def __init__(self):
         self.pos = ""
-        self.lang = ""
         self.query = ""
         self.tweets = []
+        self.lang = ""
+        self.BASE_URI = '''https://twitter.com/search?f=tweets&vertical=default&q={query}&l={lang}'''
+        self.RELOAD_URI = '''https://twitter.com/i/search/timeline?f=tweets&vertical=default&include_available_features=1&include_entities=1&reset_error_state=false&src=typd&max_position={pos}&q={query}&l={lang}'''
 
     def search(self, query):
         self.query = query.replace(' ', '%20').replace('#', '%23').replace(':', '%3A')
+        self.pos = ""
+        print(self.query)
+        print(self.pos)
 
-        html = requests.get(url=BASE_URI, params={"q": self.query,
-                                                  "vertical": "default",
-                                                  "max_position": self.pos,
-                                                  "src": "typd",
-                                                  "include_entities": "1",
-                                                  "include_available_features": "1",
-                                                  "lang": self.lang
-                                                  }, headers=HEADER)
+        html = requests.get(url=self.BASE_URI.format(query=self.query, lang=self.lang), headers=HEADER)
 
-        self.pos = html.json()["min_position"]
-        self.tweets = list(Tweet.from_html(html.json()["items_html"]))
+        self.tweets = list(Tweet.from_html(html.text))  # .json()["items_html"]))
+        # self.pos = self.tweets.json()["min_position"]
+        print(html.text)
 
         # for tweet in tweets:
         #     print(tweet.user)
@@ -46,14 +47,7 @@ class Twitter_scroll:
 
     def scroll(self):
         try:
-            html = requests.get(url=BASE_URI, params={"q": self.query,
-                                                      "vertical": "default",
-                                                      "max_position": self.pos,
-                                                      "src": "typd",
-                                                      "include_entities": "1",
-                                                      "include_available_features": "1",
-                                                      "lang": self.lang
-                                                      }, headers=HEADER)
+            html = requests.get(url=self.RELOAD_URI, headers=HEADER)
 
             self.tweets = list(Tweet.from_html(html.json()["items_html"]))
             self.pos = html.json()["min_position"]

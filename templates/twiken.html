@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+    <title>ツイ検 | ツイ検</title>
+    <link rel='dns-prefetch' href='//cdnjs.cloudflare.com'/>
+    <link rel='dns-prefetch' href='//b.st-hatena.com'/>
+    <link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com'/>
+    <link rel='dns-prefetch' href='//s.w.org'/>
+    <link rel="alternate" type="application/rss+xml" title="ツイ検 &raquo; フィード" href="https://tweet-search.xyz/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="ツイ検 &raquo; コメントフィード"
+          href="https://tweet-search.xyz/comments/feed/"/>
+    <link rel='stylesheet' id='dashicons-css'
+          href='https://tweet-search.xyz/wp-includes/css/dashicons.min.css?ver=4.9.8&#038;fver=20170819044048'
+          media='all'/>
+    <link rel='stylesheet' id='admin-bar-css'
+          href='https://tweet-search.xyz/wp-includes/css/admin-bar.min.css?ver=4.9.8&#038;fver=20170929044350'
+          media='all'/>
+    <link rel='stylesheet' id='cocoon-style-css'
+          href='https://tweet-search.xyz/wp-content/themes/cocoon-master/style.css?ver=4.9.8&#038;fver=20181208021743'
+          media='all'/>
+    <style id='cocoon-style-inline-css'>
+@media screen and (max-width:480px){.page-body{font-size:16px}}.main{width:860px}.sidebar{width:356px}@media screen and (max-width:1242px){ .wrap{width:auto}.main,.sidebar,.sidebar-left .main,.sidebar-left .sidebar{margin:0 .5%}.main{width:67%}.sidebar{padding:0 10px;width:30%}.entry-card-thumb{width:38%}.entry-card-content{margin-left:40%}}body::after{content:url(https://tweet-search.xyz/wp-content/themes/cocoon-master/lib/analytics/access.php?post_id=46&post_type=page);visibility:hidden;height:1px;position:absolute;bottom:0;right:0;width:100%}.column-narrow .content-in{width:860px}@media screen and (max-width:860px){.column-narrow .content-in{width:auto}} #toc-checkbox{display:none}.toc-content{visibility:hidden;  height:0;opacity:.2;transition:all .5s ease-out}#toc-checkbox:checked~.toc-content{ visibility:visible;padding-top:.6em;height:100%;opacity:1}.toc-title::after{content:'[開く]';margin-left:.5em;cursor:pointer;font-size:.8em}.toc-title:hover::after{text-decoration:underline}#toc-checkbox:checked+.toc-title::after{content:'[閉じる]'}#respond{display:none}
+
+    </style>
+    <link rel='stylesheet' id='font-awesome-style-css'
+          href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.9.8' media='all'/>
+    <link rel='stylesheet' id='icomoon-style-css'
+          href='https://tweet-search.xyz/wp-content/themes/cocoon-master/webfonts/icomoon/style.css?ver=4.9.8&#038;fver=20181208021743'
+          media='all'/>
+    <link rel='stylesheet' id='baguettebox-style-css'
+          href='https://tweet-search.xyz/wp-content/themes/cocoon-master/plugins/baguettebox/dist/baguetteBox.min.css?ver=4.9.8&#038;fver=20181208021743'
+          media='all'/>
+    <link rel='stylesheet' id='slick-theme-style-css'
+          href='https://tweet-search.xyz/wp-content/themes/cocoon-master/plugins/slick/slick-theme.css?ver=4.9.8&#038;fver=20181208021743'
+          media='all'/>
+    <link rel='shortlink' href='https://tweet-search.xyz/?p=46'/>
+    <!-- Cocoon site icon -->
+    <link rel="icon" href="https://tweet-search.xyz/wp-content/themes/cocoon-master/images/site-icon32x32.png"
+          sizes="32x32"/>
+    <link rel="icon" href="https://tweet-search.xyz/wp-content/themes/cocoon-master/images/site-icon192x192.png"
+          sizes="192x192"/>
+    <link rel="apple-touch-icon"
+          href="https://tweet-search.xyz/wp-content/themes/cocoon-master/images/site-icon180x180.png"/>
+    <meta name="msapplication-TileImage"
+          content="https://tweet-search.xyz/wp-content/themes/cocoon-master/images/site-icon270x270.png"/>
+    <!-- Cocoon canonical -->
+    <link rel="canonical" href="https://tweet-search.xyz/twiken/">
+    <!-- Cocoon meta description -->
+    <!-- Cocoon JSON-LD -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https://tweet-search.xyz/twiken/"
+  },
+  "headline": "ツイ検",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://tweet-search.xyz/wp-content/themes/cocoon-master/images/no-image-large.png",
+    "width": 800,
+    "height": 451
+  },
+  "datePublished": "2018-12-08T02:33:30+00:00",
+  "dateModified": "2018-12-08T02:33:30+00:00",
+  "author": {
+    "@type": "Person",
+    "name": "sh05"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ツイ検",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tweet-search.xyz/wp-content/themes/cocoon-master/images/no-amp-logo.png",
+      "width": 206,
+      "height": 60
+    }
+  },
+}
+
+    </script><!-- OGP -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ツイ検">
+    <meta property="og:url" content="https://tweet-search.xyz/twiken/">
+    <meta property="og:image" content="https://tweet-search.xyz/wp-content/themes/cocoon-master/screenshot.jpg">
+    <meta property="og:site_name" content="ツイ検">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="article:published_time" content="2018-12-08T02:33:30+00:00"/>
+    <meta property="article:modified_time" content="2018-12-08T02:33:30+00:00"/>
+    <!-- /OGP -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ツイ検">
+    <meta name="twitter:url" content="https://tweet-search.xyz/twiken/">
+    <meta name="twitter:image" content="https://tweet-search.xyz/wp-content/themes/cocoon-master/screenshot.jpg">
+    <meta name="twitter:domain" content="tweet-search.xyz">
+    <!-- /Twitter Card -->
+    <style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+    <style media="print">#wpadminbar { display:none; }</style>
+    <style media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+
+    </style>
+    <meta name="twitter:partner" content="tfwp"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="ツイ検"/>
+    <style id="wp-custom-css">
+			.page .sns-share,
+.page .sns-follow {
+    display: none;
+}
+    </style>
+
+
+</head>
+
+<body class="page-template-default page page-id-46 logged-in admin-bar no-customize-support public-page page-body ff-yu-gothic fz-18px fw-400 column1 column-narrow hlt-center-logo-wrap ect-entry-card-wrap rect-entry-card-wrap column1-narrow no-sidebar no-scrollable-sidebar no-scrollable-main sidebar-right mblt-slide-in author-admin mobile-button-slide-in no-mobile-sidebar no-sp-snippet"
+      itemscope itemtype="https://schema.org/WebPage" bgcolor="#1da1f2">
+
+
+<div id="container" class="container cf">
+    <div id="header-container" class="header-container">
+        <div class="header-container-in hlt-center-logo">
+            <header id="header" class="header cf" itemscope itemtype="https://schema.org/WPHeader">
+
+                <div id="header-in" class="header-in wrap cf" itemscope itemtype="https://schema.org/WebSite">
+
+                    <div class="tagline" itemprop="alternativeHeadline">ツイート検索をより便利にしてくれます。</div>
+
+                    <div class="logo logo-header logo-text"><a href="https://tweet-search.xyz"
+                                                               class="site-name site-name-text-link"
+                                                               itemprop="url"><span class="site-name-text"
+                                                                                    itemprop="name about">ツイ検</span></a>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Navigation -->
+            <nav id="navi" class="navi cf" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <div id="navi-in" class="navi-in wrap cf">
+                </div><!-- /#navi-in -->
+            </nav>
+            <!-- /Navigation -->  </div><!-- /.header-container-in -->
+    </div><!-- /.header-container -->
+
+
+    <div id="content" class="content cf">
+
+        <div id="content-in" class="content-in wrap cf">
+
+            <main id="main" class="main" itemscope itemtype="https://schema.org/Blog">
+
+
+                <article id="post-46" class="article post-46 page type-page status-publish hentry" itemscope="itemscope"
+                         itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
+
+
+                    <header class="article-header entry-header">
+                        <h1 class="entry-title" itemprop="headline">
+                            ツイ検 </h1>
+
+
+                        <div class="eye-catch-wrap display-none">
+                            <figure class="eye-catch" itemprop="image" itemscope
+                                    itemtype="https://schema.org/ImageObject">
+                                <img src="https://tweet-search.xyz/wp-content/themes/cocoon-master/screenshot.jpg"
+                                     width="880" height="660" alt="">
+                                <meta itemprop="url"
+                                      content="https://tweet-search.xyz/wp-content/themes/cocoon-master/screenshot.jpg">
+                                <meta itemprop="width" content="880">
+                                <meta itemprop="height" content="660">
+                            </figure>
+                        </div>
+
+                        <div class="sns-share ss-col-6 ss-high-and-low-lc bc-brand-color sbc-hide ss-top">
+
+                            <div class="sns-share-buttons sns-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%E3%83%84%E3%82%A4%E6%A4%9C&amp;url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F"
+                                   class="share-button twitter-button twitter-share-button-sq" target="blank"
+                                   rel="nofollow"><span class="social-icon icon-twitter"></span><span
+                                        class="button-caption">Twitter</span><span
+                                        class="share-count twitter-share-count"></span></a>
+
+                                <a href="//www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F&amp;t=%E3%83%84%E3%82%A4%E6%A4%9C"
+                                   class="share-button facebook-button facebook-share-button-sq" target="blank"
+                                   rel="nofollow"><span class="social-icon icon-facebook"></span><span
+                                        class="button-caption">Facebook</span><span
+                                        class="share-count facebook-share-count"></span></a>
+
+                                <a href="//b.hatena.ne.jp/entry/s/tweet-search.xyz/twiken/"
+                                   class="share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq"
+                                   data-hatena-bookmark-layout="simple" title="ツイ検" target="blank" rel="nofollow"><span
+                                        class="social-icon icon-hatena"></span><span
+                                        class="button-caption">はてブ</span><span
+                                        class="share-count hatebu-share-count"></span></a>
+
+                                <a href="//plus.google.com/share?url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F"
+                                   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+                                   class="share-button google-plus-button google-plus-share-button-sq" target="blank"
+                                   rel="nofollow"><span class="social-icon icon-googleplus"></span><span
+                                        class="button-caption">Google+</span><span
+                                        class="share-count googleplus-share-count"></span></a>
+
+                                <a href="//getpocket.com/edit?url=https://tweet-search.xyz/twiken/"
+                                   class="share-button pocket-button pocket-share-button-sq" target="blank"
+                                   rel="nofollow"><span class="social-icon icon-pocket"></span><span
+                                        class="button-caption">Pocket</span><span
+                                        class="share-count pocket-share-count"></span></a>
+
+                                <a href="//timeline.line.me/social-plugin/share?url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F"
+                                   class="share-button line-button line-share-button-sq" target="_blank" rel="nofollow"><span
+                                        class="social-icon icon-line"></span><span
+                                        class="button-caption">LINE</span><span
+                                        class="share-count line-share-count"></span></a>
+
+
+                            </div><!-- /.sns-share-buttons -->
+
+                        </div><!-- /.sns-share -->
+
+
+                        <div class="date-tags">
+                            <span class="post-date"><time class="entry-date date published updated"
+                                                          datetime="2018-12-08T02:33:30+00:00"
+                                                          itemprop="datePublished dateModified">2018.12.08</time></span>
+                        </div>
+
+
+                    </header>
+
+                    <div class="entry-content cf" itemprop="mainEntityOfPage">
+                        <div class="t-aligncenter">
+                            <h2>Twitter検索</h2>
+                        </div>
+                        <div class="t-aligncenter">
+                            <form method="post"><span style="font-size: 20px;">キーワード</span><br/>
+                                <input type="text" name="keyword" size="40" maxlength="20"/></p>
+                                <p><span style="font-size: 20px;">いいねの数</span><br/>
+                                    <input type="number" name="favorite"/></p>
+                                <p><span style="font-size: 20px;">RTの数</span><br/>
+                                    <input type="number" name="RT"/></p>
+                                <p><span style="font-size: 20px;">いつから</span><br/>
+                                    <input type="date" name="since"/></p>
+                                <p><span style="font-size: 20px;">投稿の種類</span><br/>
+                                    <span style="font-size: 20px;"><input type="radio" name="none" value="0"/>なし<input
+                                            type="radio" name="none" value="1"/>画像<input type="radio" name="none"
+                                                                                         value="2"/>動画<input
+                                            type="radio" name="none" value="3"/>リンク</span></p>
+                                <p><input type="submit" value="検索" style="width:100px; height:50px;"/></form>
+                        </div>
+                        <div class="t-aligncenter">
+                            <h2>検索結果</h2>
+                        </div>
+                        <ul>
+                            <li>{{ keyword }}で、いいねが{{ favorite }}以上、RTが{{ rt }}以上、{{ since }}以降の{{ content
+                                }}ツイートを表示します。
+                            </li>
+                            <br>
+                            {% for result in results %}
+                            <div style="background-color:white;">
+                                <img src="{{result.icon}}" alt="アイコン" style="border-radius:50px;" align="left"/>
+                                <a href="http://twitter.com/{{result.user}}" target="_blank"><font size="3">{{result.fullname}}<br>@{{result.user}}</font></a><br><br>
+                                <font size="5" color="#555555">{{result.text}}</font><br><br>
+                                <a href="http://twitter.com/{{result.user}}/status/{{result.id}}" target="_blank">ツイートに移動</a><br>
+                                {% for img in result.media %}
+                                <img src="{{img}}" alt="">
+                                {% endfor %}
+                                <br>
+                                <a href="http://twitter.com/intent/tweet?in_reply_to={{result.id}}&original_referer=https://buzz-matome.xyz/"
+                                   target="_blank">リプライ</a>&ensp;
+                                <a href="http://twitter.com/intent/favorite?tweet_id={{result.id}}&original_referer=https://buzz-matome.xyz/"
+                                   target="_blank">♡:{{result.likes}}</a>&ensp;
+                                <a href="http://twitter.com/intent/retweet?tweet_id={{result.id}}&original_referer=https://buzz-matome.xyz/"
+                                   target="_blank">RT:{{result.retweets}}</a>&ensp;
+                                <br>
+                            </div>
+                            <br>
+                            <hr>
+                            <br>
+                            {% endfor %}
+                        </ul>
+                        <p><!--検索結果のツイートを表示--><br/>
+                            <!--検査結果をシェアするボタン--><br/>
+                            <!--検索画面--></p>
+                    </div>
+
+
+                    <footer class="article-footer entry-footer">
+
+
+                        <div class="entry-categories-tags ctdt-one-row">
+                            <div class="entry-categories"></div>
+                            <div class="entry-tags"></div>
+                        </div>
+
+
+                        <div class="sns-share ss-col-3 bc-brand-color sbc-hide ss-bottom">
+                            <div class="sns-share-message">シェアする</div>
+
+                            <div class="sns-share-buttons sns-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%E3%83%84%E3%82%A4%E6%A4%9C&amp;url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F"
+                                   class="share-button twitter-button twitter-share-button-sq" target="blank"
+                                   rel="nofollow"><span class="social-icon icon-twitter"></span><span
+                                        class="button-caption">Twitter</span><span
+                                        class="share-count twitter-share-count"></span></a>
+
+                                <a href="//www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F&amp;t=%E3%83%84%E3%82%A4%E6%A4%9C"
+                                   class="share-button facebook-button facebook-share-button-sq" target="blank"
+                                   rel="nofollow"><span class="social-icon icon-facebook"></span><span
+                                        class="button-caption">Facebook</span><span
+                                        class="share-count facebook-share-count"></span></a>
+
+                                <a href="//b.hatena.ne.jp/entry/s/tweet-search.xyz/twiken/"
+                                   class="share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq"
+                                   data-hatena-bookmark-layout="simple" title="ツイ検" target="blank" rel="nofollow"><span
+                                        class="social-icon icon-hatena"></span><span
+                                        class="button-caption">はてブ</span><span
+                                        class="share-count hatebu-share-count"></span></a>
+
+                                <a href="//plus.google.com/share?url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F"
+                                   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+                                   class="share-button google-plus-button google-plus-share-button-sq" target="blank"
+                                   rel="nofollow"><span class="social-icon icon-googleplus"></span><span
+                                        class="button-caption">Google+</span><span
+                                        class="share-count googleplus-share-count"></span></a>
+
+                                <a href="//getpocket.com/edit?url=https://tweet-search.xyz/twiken/"
+                                   class="share-button pocket-button pocket-share-button-sq" target="blank"
+                                   rel="nofollow"><span class="social-icon icon-pocket"></span><span
+                                        class="button-caption">Pocket</span><span
+                                        class="share-count pocket-share-count"></span></a>
+
+                                <a href="//timeline.line.me/social-plugin/share?url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F"
+                                   class="share-button line-button line-share-button-sq" target="_blank" rel="nofollow"><span
+                                        class="social-icon icon-line"></span><span
+                                        class="button-caption">LINE</span><span
+                                        class="share-count line-share-count"></span></a>
+
+
+                            </div><!-- /.sns-share-buttons -->
+
+                        </div><!-- /.sns-share -->
+
+                        <!-- SNSページ -->
+                        <div class="sns-follow bc-brand-color fbc-hide">
+
+                            <div class="sns-follow-message">sh05をフォローする</div>
+                            <div class="sns-follow-buttons sns-buttons">
+
+
+                                <a href="//feedly.com/i/subscription/feed/https://tweet-search.xyz/feed/"
+                                   class="follow-button feedly-button feedly-follow-button-sq" target="blank"
+                                   title="feedlyで更新情報を購読" rel="nofollow"><span class="icon-feedly-logo"></span><span
+                                        class="follow-count feedly-follow-count"></span></a>
+
+                                <a href="https://tweet-search.xyz/feed/"
+                                   class="follow-button rss-button rss-follow-button-sq" target="_blank"
+                                   title="RSSで更新情報をフォロー" rel="nofollow"><span class="icon-rss-logo"></span></a>
+
+                            </div><!-- /.sns-follow-buttons -->
+
+                        </div><!-- /.sns-follow -->
+
+
+                        <div class="footer-meta">
+                            <div class="author-info">
+                                <a href="https://tweet-search.xyz/author/sh05/" class="author-link">
+      <span class="post-author vcard author" itemprop="editor author creator copyrightHolder" itemscope
+            itemtype="https://schema.org/Person">
+        <span class="author-name fn" itemprop="name"></span>
+      </span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- publisher設定 -->
+                        <div class="publisher" itemprop="publisher" itemscope
+                             itemtype="https://schema.org/Organization">
+                            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                <img src="https://tweet-search.xyz/wp-content/themes/cocoon-master/images/no-amp-logo.png"
+                                     width="206" height="60" alt="">
+                                <meta itemprop="url"
+                                      content="https://tweet-search.xyz/wp-content/themes/cocoon-master/images/no-amp-logo.png">
+                                <meta itemprop="width" content="206">
+                                <meta itemprop="height" content="60">
+                            </div>
+                            <div itemprop="name">ツイ検</div>
+                        </div>
+                    </footer>
+
+                </article>
+
+
+                <div id="breadcrumb" class="breadcrumb breadcrumb-page pbp-main-bottom" itemscope
+                     itemtype="https://schema.org/BreadcrumbList">
+                    <div class="breadcrumb-home" itemscope itemtype="https://schema.org/ListItem"
+                         itemprop="itemListElement"><span class="fa fa-home fa-fw"></span><a
+                            href="https://tweet-search.xyz" itemprop="item"><span itemprop="name">ホーム</span></a>
+                        <meta itemprop="position" content="1"/>
+                    </div>
+                </div><!-- /#breadcrumb -->
+
+
+            </main>
+
+            <div id="sidebar" class="sidebar nwa cf" role="complementary">
+
+
+                <aside id="search-2" class="widget widget-sidebar widget-sidebar-standard widget_search">
+                    <form class="search-box input-box" method="get" action="https://tweet-search.xyz/">
+                        <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input">
+                        <button type="submit" class="search-submit" role="button" aria-label="button"></button>
+                    </form>
+                </aside>
+                <aside id="recent-posts-2" class="widget widget-sidebar widget-sidebar-standard widget_recent_entries">
+                    <h3 class="widget-sidebar-title widget-title">最近の投稿</h3>
+                    <ul>
+                        <li>
+                            <a href="https://tweet-search.xyz/twiken-pro/">ツイ検PRO</a>
+                        </li>
+                        <li>
+                            <a href="https://tweet-search.xyz/twiken/">ツイ検</a>
+                        </li>
+                    </ul>
+                </aside>
+                <aside id="recent-comments-2"
+                       class="widget widget-sidebar widget-sidebar-standard widget_recent_comments"><h3
+                        class="widget-sidebar-title widget-title">最近のコメント</h3>
+                    <ul id="recentcomments"></ul>
+                </aside>
+                <aside id="archives-2" class="widget widget-sidebar widget-sidebar-standard widget_archive"><h3
+                        class="widget-sidebar-title widget-title">アーカイブ</h3>
+                    <ul>
+                        <li><a href='https://tweet-search.xyz/2018/12/'>2018年12月</a></li>
+                    </ul>
+                </aside>
+                <aside id="categories-2" class="widget widget-sidebar widget-sidebar-standard widget_categories"><h3
+                        class="widget-sidebar-title widget-title">カテゴリー</h3>
+                    <ul>
+                        <li class="cat-item cat-item-1"><a href="https://tweet-search.xyz/category/uncategorized/">Uncategorized</a>
+                        </li>
+                    </ul>
+                </aside>
+                <aside id="meta-2" class="widget widget-sidebar widget-sidebar-standard widget_meta"><h3
+                        class="widget-sidebar-title widget-title">メタ情報</h3>
+                    <ul>
+                        <li><a href="https://tweet-search.xyz/wp-admin/">サイト管理</a></li>
+                        <li>
+                            <a href="https://tweet-search.xyz/wp-login.php?action=logout&#038;_wpnonce=8cc4eb1114">ログアウト</a>
+                        </li>
+                        <li><a href="https://tweet-search.xyz/feed/">投稿の <abbr
+                                title="Really Simple Syndication">RSS</abbr></a></li>
+                        <li><a href="https://tweet-search.xyz/comments/feed/">コメントの <abbr
+                                title="Really Simple Syndication">RSS</abbr></a></li>
+                        <li><a href="https://ja.wordpress.org/"
+                               title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>
+                        </li>
+                    </ul>
+                </aside>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer id="footer" class="footer footer-container nwa" itemscope itemtype="https://schema.org/WPFooter">
+
+        <div id="footer-in" class="footer-in wrap cf">
+
+
+            <div class="footer-bottom fdt-logo fnm-text-width cf">
+                <div class="footer-bottom-logo">
+                    <div class="logo logo-footer logo-text"><a href="https://tweet-search.xyz"
+                                                               class="site-name site-name-text-link"
+                                                               itemprop="url"><span class="site-name-text"
+                                                                                    itemprop="name about">ツイ検</span></a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom-content">
+                    <nav id="navi-footer" class="navi-footer">
+                        <div id="navi-footer-in" class="navi-footer-in">
+                        </div>
+                    </nav>
+                    <div class="source-org copyright">© 2018 ツイ検.</div>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+
+<div id="go-to-top" class="go-to-top">
+    <a class="go-to-top-button go-to-top-common go-to-top-hide go-to-top-button-icon-font"><span
+            class="fa fa-angle-double-up"></span></a>
+</div>
+
+<div id="admin-panel" class="admin-panel apdt-all">
+
+    <div class="admin-pv">
+      <span class="admin-pv-by">
+                  by Cocoon              </span>
+        <span class="fa fa-bar-chart fa-fw"></span>
+        <span class="today-pv">
+        <span class="today-pv-label">本日</span>
+        <span class="today-pv-count">0</span>
+      </span>
+        <span class="week-pv">
+        <span class="week-pv-label">週</span>
+        <span class="week-pv-count">0</span>
+      </span>
+        <span class="month-pv">
+        <span class="month-pv-label">月</span>
+        <span class="month-pv-count">0</span>
+      </span>
+        <span class="all-pv">
+        <span class="all-pv-label">全体</span>
+        <span class="all-pv-count">0</span>
+      </span>
+    </div>
+
+    <div class="admin-edit">
+        <span class="fa fa-edit fa-fw"></span>
+        <span class="post-edit"><a class="post-edit-link"
+                                   href="https://tweet-search.xyz/wp-admin/post.php?post=46&#038;action=edit">編集</a></span>
+    </div>
+
+
+    <div class="admin-cresponsive">
+        <span class="fa fa-tablet"></span>
+        <a href="https://www.responsinator.com/?url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F " target="_blank">レスポンシブテスト</a>
+        <a href="https://sizzy.co/?url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F " target="_blank">Sizzy</a>
+        <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F&w=414&h=736"
+           target="_blank">Resolution Test</a>
+
+    </div>
+
+</div>
+
+
+<div class="mobile-menu-buttons">
+
+
+    <!-- ホームボタン -->
+    <div class="home-menu-button menu-button">
+        <a href="https://tweet-search.xyz" class="menu-button-in">
+            <div class="home-menu-icon menu-icon"></div>
+            <div class="home-menu-caption menu-caption">ホーム</div>
+        </a>
+    </div>
+
+    <!-- 検索ボタン -->
+    <!-- 検索ボタン -->
+    <div class="search-menu-button menu-button">
+        <input id="search-menu-input" type="checkbox" class="display-none">
+        <label id="search-menu-open" class="menu-open menu-button-in" for="search-menu-input">
+            <span class="search-menu-icon menu-icon"></span>
+            <span class="search-menu-caption menu-caption">検索</span>
+        </label>
+        <label class="display-none" id="search-menu-close" for="search-menu-input"></label>
+        <div id="search-menu-content" class="search-menu-content">
+            <form class="search-box input-box" method="get" action="https://tweet-search.xyz/">
+                <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input">
+                <button type="submit" class="search-submit" role="button" aria-label="button"></button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- トップボタン -->
+    <div class="top-menu-button menu-button">
+        <a class="go-to-top-common top-menu-a menu-button-in">
+            <div class="top-menu-icon menu-icon"></div>
+            <div class="top-menu-caption menu-caption">トップ</div>
+        </a>
+    </div>
+
+    <!-- サイドバーボタン -->
+    <div class="sidebar-menu-button menu-button">
+        <input id="sidebar-menu-input" type="checkbox" class="display-none">
+        <label id="sidebar-menu-open" class="menu-open menu-button-in" for="sidebar-menu-input">
+            <span class="sidebar-menu-icon menu-icon"></span>
+            <span class="sidebar-menu-caption menu-caption">サイドバー</span>
+        </label>
+        <label class="display-none" id="sidebar-menu-close" for="sidebar-menu-input"></label>
+        <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
+            <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label>
+            <div id="slide-in-sidebar" class="sidebar nwa cf" role="complementary">
+
+
+                <aside id="slide-in-search-2" class="widget widget-sidebar widget-sidebar-standard widget_search">
+                    <form class="search-box input-box" method="get" action="https://tweet-search.xyz/">
+                        <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input">
+                        <button type="submit" class="search-submit" role="button" aria-label="button"></button>
+                    </form>
+                </aside>
+                <aside id="slide-in-recent-posts-2"
+                       class="widget widget-sidebar widget-sidebar-standard widget_recent_entries"><h3
+                        class="widget-sidebar-title widget-title">最近の投稿</h3>
+                    <ul>
+                        <li>
+                            <a href="https://tweet-search.xyz/twiken-pro/">ツイ検PRO</a>
+                        </li>
+                        <li>
+                            <a href="https://tweet-search.xyz/twiken/">ツイ検</a>
+                        </li>
+                    </ul>
+                </aside>
+                <aside id="slide-in-recent-comments-2"
+                       class="widget widget-sidebar widget-sidebar-standard widget_recent_comments"><h3
+                        class="widget-sidebar-title widget-title">最近のコメント</h3>
+                    <ul id="slide-in-recentcomments"></ul>
+                </aside>
+                <aside id="slide-in-archives-2" class="widget widget-sidebar widget-sidebar-standard widget_archive"><h3
+                        class="widget-sidebar-title widget-title">アーカイブ</h3>
+                    <ul>
+                        <li><a href='https://tweet-search.xyz/2018/12/'>2018年12月</a></li>
+                    </ul>
+                </aside>
+                <aside id="slide-in-categories-2"
+                       class="widget widget-sidebar widget-sidebar-standard widget_categories"><h3
+                        class="widget-sidebar-title widget-title">カテゴリー</h3>
+                    <ul>
+                        <li class="cat-item cat-item-1"><a href="https://tweet-search.xyz/category/uncategorized/">Uncategorized</a>
+                        </li>
+                    </ul>
+                </aside>
+                <aside id="slide-in-meta-2" class="widget widget-sidebar widget-sidebar-standard widget_meta"><h3
+                        class="widget-sidebar-title widget-title">メタ情報</h3>
+                    <ul>
+                        <li><a href="https://tweet-search.xyz/wp-admin/">サイト管理</a></li>
+                        <li>
+                            <a href="https://tweet-search.xyz/wp-login.php?action=logout&#038;_wpnonce=8cc4eb1114">ログアウト</a>
+                        </li>
+                        <li><a href="https://tweet-search.xyz/feed/">投稿の <abbr
+                                title="Really Simple Syndication">RSS</abbr></a></li>
+                        <li><a href="https://tweet-search.xyz/comments/feed/">コメントの <abbr
+                                title="Really Simple Syndication">RSS</abbr></a></li>
+                        <li><a href="https://ja.wordpress.org/"
+                               title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>
+                        </li>
+                    </ul>
+                </aside>
+
+
+            </div>
+            <!-- <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label> -->
+        </div>
+    </div>
+</div>
+
+
+<script src='https://tweet-search.xyz/wp-includes/js/admin-bar.min.js?ver=4.9.8&#038;fver=20161103021034'></script>
+<script src='https://tweet-search.xyz/wp-includes/js/jquery/jquery.js?ver=1.12.4&#038;fver=20160523053030'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js?ver=1.4.1'></script>
+<script src='https://tweet-search.xyz/wp-content/themes/cocoon-master/plugins/baguettebox/dist/baguetteBox.min.js?ver=4.9.8&#038;fver=20181208021743'></script>
+<script>
+(function($){baguetteBox.run(".entry-content")})(jQuery);
+
+</script>
+<script src='https://tweet-search.xyz/wp-content/themes/cocoon-master/plugins/slick/slick.min.js?ver=4.9.8&#038;fver=20181208021743'></script>
+<script>
+(function($){$(".carousel-content").slick({dots:!0,autoplaySpeed:5000,infinite:!0,slidesToShow:6,slidesToScroll:6,responsive:[{breakpoint:1240,settings:{slidesToShow:5,slidesToScroll:5}},{breakpoint:1023,settings:{slidesToShow:4,slidesToScroll:4}},{breakpoint:768,settings:{slidesToShow:3,slidesToScroll:3}},{breakpoint:480,settings:{slidesToShow:2,slidesToScroll:2}}]})})(jQuery);
+
+</script>
+<script src='https://tweet-search.xyz/wp-includes/js/comment-reply.min.js?ver=4.9.8&#038;fver=20151118034528'></script>
+<script src='https://tweet-search.xyz/wp-content/themes/cocoon-master/javascript.js?ver=4.9.8&#038;fver=20181208021743'></script>
+<script src='//b.st-hatena.com/js/bookmark_button.js?ver=4.9.8'></script>
+<!--[if lte IE 8]>
+<script>
+			document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
+
+</script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script>
+			(function() {
+				var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+						request = true;
+
+				b[c] = b[c].replace( rcs, ' ' );
+				// The customizer requires postMessage and CORS (if the site is cross domain)
+				b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+			}());
+
+</script>
+<!--<![endif]-->
+<div id="wpadminbar" class="nojq nojs">
+    <a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">ツールバーへスキップ</a>
+    <div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="ツールバー" tabindex="0">
+        <ul id="wp-admin-bar-root-default" class="ab-top-menu">
+            <li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item" aria-haspopup="true"
+                                                             href="https://tweet-search.xyz/wp-admin/about.php"><span
+                    class="ab-icon"></span><span class="screen-reader-text">WordPress について</span></a>
+                <div class="ab-sub-wrapper">
+                    <ul id="wp-admin-bar-wp-logo-default" class="ab-submenu">
+                        <li id="wp-admin-bar-about"><a class="ab-item"
+                                                       href="https://tweet-search.xyz/wp-admin/about.php">WordPress
+                            について</a></li>
+                    </ul>
+                    <ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+                        <li id="wp-admin-bar-wporg"><a class="ab-item"
+                                                       href="https://ja.wordpress.org/">WordPress.org</a></li>
+                        <li id="wp-admin-bar-documentation"><a class="ab-item"
+                                                               href="http://wpdocs.osdn.jp/">ドキュメンテーション</a></li>
+                        <li id="wp-admin-bar-support-forums"><a class="ab-item"
+                                                                href="https://ja.wordpress.org/support/">サポートフォーラム</a>
+                        </li>
+                        <li id="wp-admin-bar-feedback"><a class="ab-item"
+                                                          href="https://ja.wordpress.org/support/forum/feedback/">フィードバック</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li id="wp-admin-bar-site-name" class="menupop"><a class="ab-item" aria-haspopup="true"
+                                                               href="https://tweet-search.xyz/wp-admin/">ツイ検</a>
+                <div class="ab-sub-wrapper">
+                    <ul id="wp-admin-bar-site-name-default" class="ab-submenu">
+                        <li id="wp-admin-bar-dashboard"><a class="ab-item" href="https://tweet-search.xyz/wp-admin/">ダッシュボード</a>
+                        </li>
+                    </ul>
+                    <ul id="wp-admin-bar-appearance" class="ab-submenu">
+                        <li id="wp-admin-bar-themes"><a class="ab-item"
+                                                        href="https://tweet-search.xyz/wp-admin/themes.php">テーマ</a></li>
+                        <li id="wp-admin-bar-widgets"><a class="ab-item"
+                                                         href="https://tweet-search.xyz/wp-admin/widgets.php">ウィジェット</a>
+                        </li>
+                        <li id="wp-admin-bar-menus"><a class="ab-item"
+                                                       href="https://tweet-search.xyz/wp-admin/nav-menus.php">メニュー</a>
+                        </li>
+                        <li id="wp-admin-bar-background" class="hide-if-customize"><a class="ab-item"
+                                                                                      href="https://tweet-search.xyz/wp-admin/themes.php?page=custom-background">背景</a>
+                        </li>
+                        <li id="wp-admin-bar-header" class="hide-if-customize"><a class="ab-item"
+                                                                                  href="https://tweet-search.xyz/wp-admin/themes.php?page=custom-header">ヘッダー</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li id="wp-admin-bar-customize" class="hide-if-no-customize"><a class="ab-item"
+                                                                            href="https://tweet-search.xyz/wp-admin/customize.php?url=https%3A%2F%2Ftweet-search.xyz%2Ftwiken%2F">カスタマイズ</a>
+            </li>
+            <li id="wp-admin-bar-updates"><a class="ab-item" href="https://tweet-search.xyz/wp-admin/update-core.php"
+                                             title="3件のテーマ更新"><span class="ab-icon"></span><span
+                    class="ab-label">3</span><span class="screen-reader-text">3件のテーマ更新</span></a></li>
+            <li id="wp-admin-bar-comments"><a class="ab-item"
+                                              href="https://tweet-search.xyz/wp-admin/edit-comments.php"><span
+                    class="ab-icon"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span
+                    class="screen-reader-text">0件のコメントが承認待ちです。</span></a></li>
+            <li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item" aria-haspopup="true"
+                                                                 href="https://tweet-search.xyz/wp-admin/post-new.php"><span
+                    class="ab-icon"></span><span class="ab-label">新規</span></a>
+                <div class="ab-sub-wrapper">
+                    <ul id="wp-admin-bar-new-content-default" class="ab-submenu">
+                        <li id="wp-admin-bar-new-post"><a class="ab-item"
+                                                          href="https://tweet-search.xyz/wp-admin/post-new.php">投稿</a>
+                        </li>
+                        <li id="wp-admin-bar-new-media"><a class="ab-item"
+                                                           href="https://tweet-search.xyz/wp-admin/media-new.php">メディア</a>
+                        </li>
+                        <li id="wp-admin-bar-new-link"><a class="ab-item"
+                                                          href="https://tweet-search.xyz/wp-admin/link-add.php">リンク</a>
+                        </li>
+                        <li id="wp-admin-bar-new-page"><a class="ab-item"
+                                                          href="https://tweet-search.xyz/wp-admin/post-new.php?post_type=page">固定ページ</a>
+                        </li>
+                        <li id="wp-admin-bar-new-user"><a class="ab-item"
+                                                          href="https://tweet-search.xyz/wp-admin/user-new.php">ユーザー</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li id="wp-admin-bar-edit"><a class="ab-item"
+                                          href="https://tweet-search.xyz/wp-admin/post.php?post=46&#038;action=edit">固定ページを編集</a>
+            </li>
+            <li id="wp-admin-bar-dashboard_menu" class="menupop">
+                <div class="ab-item ab-empty-item" aria-haspopup="true"><span class="ab-label">管理メニュー</span></div>
+                <div class="ab-sub-wrapper">
+                    <ul id="wp-admin-bar-dashboard_menu-default" class="ab-submenu">
+                        <li id="wp-admin-bar-dashboard_menu-dashboard"><a class="ab-item"
+                                                                          href="https://tweet-search.xyz/wp-admin/">ダッシュボード</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-singles"><a class="ab-item"
+                                                                        href="https://tweet-search.xyz/wp-admin/edit.php">投稿一覧</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-pages"><a class="ab-item"
+                                                                      href="https://tweet-search.xyz/wp-admin/edit.php?post_type=page">固定ページ一覧</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-medias"><a class="ab-item"
+                                                                       href="https://tweet-search.xyz/wp-admin/upload.php">メディア一覧</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-themes"><a class="ab-item"
+                                                                       href="https://tweet-search.xyz/wp-admin/themes.php">テーマ</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-customize"><a class="ab-item"
+                                                                          href="https://tweet-search.xyz/wp-admin/customize.php?return=https://tweet-search.xyz/wp-admin/themes.php">カスタマイズ</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-widget"><a class="ab-item"
+                                                                       href="https://tweet-search.xyz/wp-admin/widgets.php">ウィジェット</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-nav-menus"><a class="ab-item"
+                                                                          href="https://tweet-search.xyz/wp-admin/nav-menus.php">メニュー</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-editor"><a class="ab-item"
+                                                                             href="https://tweet-search.xyz/wp-admin/theme-editor.php">テーマの編集</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-plugins"><a class="ab-item"
+                                                                        href="https://tweet-search.xyz/wp-admin/plugins.php">プラグイン一覧</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-settings"><a class="ab-item"
+                                                                               href="https://tweet-search.xyz/wp-admin/admin.php?page=theme-settings">Cocoon
+                            設定</a></li>
+                        <li id="wp-admin-bar-dashboard_menu-speech-balloon"><a class="ab-item"
+                                                                               href="https://tweet-search.xyz/wp-admin/admin.php?page=speech-balloon">吹き出し</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-func-text"><a class="ab-item"
+                                                                                href="https://tweet-search.xyz/wp-admin/admin.php?page=theme-func-text">テンプレート</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-affiliate-tag"><a class="ab-item"
+                                                                                    href="https://tweet-search.xyz/wp-admin/admin.php?page=theme-affiliate-tag">アフィリエイトタグ</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-ranking"><a class="ab-item"
+                                                                              href="https://tweet-search.xyz/wp-admin/admin.php?page=theme-ranking">ランキング作成</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-access"><a class="ab-item"
+                                                                             href="https://tweet-search.xyz/wp-admin/admin.php?page=theme-access">アクセス集計</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-speed-up"><a class="ab-item"
+                                                                               href="https://tweet-search.xyz/wp-admin/admin.php?page=theme-speed-up">高速化</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-backup"><a class="ab-item"
+                                                                             href="https://tweet-search.xyz/wp-admin/admin.php?page=theme-backup">バックアップ</a>
+                        </li>
+                        <li id="wp-admin-bar-dashboard_menu-theme-cache"><a class="ab-item"
+                                                                            href="https://tweet-search.xyz/wp-admin/admin.php?page=theme-cache">キャッシュ削除</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+            <li id="wp-admin-bar-search" class="admin-bar-search">
+                <div class="ab-item ab-empty-item" tabindex="-1">
+                    <form action="https://tweet-search.xyz/" method="get" id="adminbarsearch"><input
+                            class="adminbar-input" name="s" id="adminbar-search" type="text" value=""
+                            maxlength="150"/><label for="adminbar-search" class="screen-reader-text">検索</label><input
+                            type="submit" class="adminbar-button" value="検索"/></form>
+                </div>
+            </li>
+            <li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item" aria-haspopup="true"
+                                                                            href="https://tweet-search.xyz/wp-admin/profile.php">こんにちは、<span
+                    class="display-name">sh05</span> さん<img alt=''
+                                                            src='https://secure.gravatar.com/avatar/122dcb6cc230feb1208a68ce629251c9?s=26&#038;d=mm&#038;r=g'
+                                                            srcset='https://secure.gravatar.com/avatar/122dcb6cc230feb1208a68ce629251c9?s=52&#038;d=mm&#038;r=g 2x'
+                                                            class='avatar avatar-26 photo' height='26' width='26'/></a>
+                <div class="ab-sub-wrapper">
+                    <ul id="wp-admin-bar-user-actions" class="ab-submenu">
+                        <li id="wp-admin-bar-user-info"><a class="ab-item" tabindex="-1"
+                                                           href="https://tweet-search.xyz/wp-admin/profile.php"><img
+                                alt=''
+                                src='https://secure.gravatar.com/avatar/122dcb6cc230feb1208a68ce629251c9?s=64&#038;d=mm&#038;r=g'
+                                srcset='https://secure.gravatar.com/avatar/122dcb6cc230feb1208a68ce629251c9?s=128&#038;d=mm&#038;r=g 2x'
+                                class='avatar avatar-64 photo' height='64' width='64'/><span
+                                class='display-name'>sh05</span></a></li>
+                        <li id="wp-admin-bar-edit-profile"><a class="ab-item"
+                                                              href="https://tweet-search.xyz/wp-admin/profile.php">プロフィールを編集</a>
+                        </li>
+                        <li id="wp-admin-bar-logout"><a class="ab-item"
+                                                        href="https://tweet-search.xyz/wp-login.php?action=logout&#038;_wpnonce=8cc4eb1114">ログアウト</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <a class="screen-reader-shortcut"
+       href="https://tweet-search.xyz/wp-login.php?action=logout&#038;_wpnonce=8cc4eb1114">ログアウト</a>
+</div>
+
+
+</body>
+
+</html>

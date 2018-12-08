@@ -29,12 +29,11 @@
 <!--検査結果をシェアするボタン-->
 <!--検索画面-->
 {% for result in results %}
-{% - result[0] is "" +%}{% continue %}{%- endif +%}
-<b><font size="4">{{result[0]}}</font></b><br>
-@{{result[1]}}<br>
-<img src="{{result[2]}}" width="70" height="70"><br>
-{{result[3]}}<br>
-{{result[4]}}<br><br>
+<b><font size="4">{{result.fullname}}</font></b><br>
+@{{result.user}}<br>
+<img src="{{result.icon}}" width="70" height="70"><br>
+{{result.text}}<br>
+{{result.timestamp}}<br><br>
 {% endfor %}
 
 
