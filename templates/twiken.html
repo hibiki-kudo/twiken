@@ -263,24 +263,24 @@
                                 <p><span style="font-size: 20px;">いつから</span><br/>
                                     <input type="date" name="since"/></p>
                                 <p><span style="font-size: 20px;">投稿の種類</span><br/>
-                                    <span style="font-size: 20px;"><input type="radio" name="none" value="0"/>なし<input
-                                            type="radio" name="none" value="1"/>画像<input type="radio" name="none"
-                                                                                         value="2"/>動画<input
-                                            type="radio" name="none" value="3"/>リンク</span></p>
+                                    <span style="font-size: 20px;"><input type="radio" name="media" value=""
+                                                                          checked="checked"/>なし<input
+                                            type="radio" name="media" value="images"/>画像<input type="radio" name="media"
+                                                                                               value="videos"/>動画<input
+                                            type="radio" name="media" value="links"/>リンク</span></p>
                                 <p><input type="submit" value="検索" style="width:100px; height:50px;"/></form>
                         </div>
                         <div class="t-aligncenter">
                             <h2>検索結果</h2>
                         </div>
-                        <ul>
-                            <li>{{ keyword }}で、いいねが{{ favorite }}以上、RTが{{ rt }}以上、{{ since }}以降の{{ content
-                                }}ツイートを表示します。
-                            </li>
+
+                        <b><font size="6">検索ワード： {{ query }}</font></b><br>
                             <br>
                             {% for result in results %}
                             <div style="background-color:white;">
                                 <img src="{{result.icon}}" alt="アイコン" style="border-radius:50px;" align="left"/>
-                                <a href="http://twitter.com/{{result.user}}" target="_blank"><font size="3">{{result.fullname}}<br>@{{result.user}}</font></a><br><br>
+                                <font size="4"><b>{{result.fullname}}</b><a href="http://twitter.com/{{result.user}}"
+                                                                            target="_blank"><br>@{{result.user}}</a></font><br><br>
                                 <font size="5" color="#555555">{{result.text}}</font><br><br>
                                 <a href="http://twitter.com/{{result.user}}/status/{{result.id}}" target="_blank">ツイートに移動</a><br>
                                 {% for img in result.media %}
@@ -288,18 +288,18 @@
                                 {% endfor %}
                                 <br>
                                 <a href="http://twitter.com/intent/tweet?in_reply_to={{result.id}}&original_referer=https://buzz-matome.xyz/"
-                                   target="_blank">リプライ</a>&ensp;
+                                   target="_blank">リプライ: {{result.replies}}</a>&ensp;
                                 <a href="http://twitter.com/intent/favorite?tweet_id={{result.id}}&original_referer=https://buzz-matome.xyz/"
-                                   target="_blank">♡:{{result.likes}}</a>&ensp;
+                                   target="_blank">♡: {{result.likes}}</a>&ensp;
                                 <a href="http://twitter.com/intent/retweet?tweet_id={{result.id}}&original_referer=https://buzz-matome.xyz/"
-                                   target="_blank">RT:{{result.retweets}}</a>&ensp;
+                                   target="_blank">RT: {{result.retweets}}</a>&ensp;
                                 <br>
                             </div>
                             <br>
-                            <hr>
+                        <hr size="10" style="background-color:#CCCCCC;">
                             <br>
                             {% endfor %}
-                        </ul>
+
                         <p><!--検索結果のツイートを表示--><br/>
                             <!--検査結果をシェアするボタン--><br/>
                             <!--検索画面--></p>

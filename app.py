@@ -31,11 +31,12 @@ class TweetQuery:
         if self.media != "":
             self.query += " filter:" + self.media
         if self.from_ != "":
-            self.query += " until:" + self.from_
+            self.query += " from:" + self.from_
         if self.to_ != "":
-            self.query += " until:" + self.to_
+            self.query += " to:" + self.to_
 
         return self.query
+
 
 search_result = []
 results = Twitter_scroll()
@@ -51,7 +52,7 @@ def index():
     if request.method == "POST":
         search_result.clear()
         query = TweetQuery(query=request.form["keyword"], faves=request.form["favorite"], retweets=request.form["RT"],
-                           since=request.form["since"]).join_query()
+                           since=request.form["since"], media=request.form["media"]).join_query()
 
         print(query)
         print(request.form["since"])
@@ -65,12 +66,14 @@ def result(query):
     if request.method == "GET":
         results.search(query)
         search_result = results.tweets
-        return render_template("twiken.html", results=search_result)
+        return render_template("twiken.html", results=search_result,
+                               query=query.replace('%20', ' ').replace('%23', '#').replace('%3A', ':'))
 
     if request.method == "POST":
         search_result.clear()
-        query = TweetQuery(query=request.form["keyword"], faves=request.form["favorite"] or "",
-                           retweets=request.form["RT"] or "", since=request.form["since"] or "").join_query()
+        query = TweetQuery(query=request.form["keyword"], faves=request.form["favorite"],
+                           retweets=request.form["RT"], since=request.form["since"],
+                           media=request.form["media"]).join_query()
 
         return redirect(f"/result/{query}")
 

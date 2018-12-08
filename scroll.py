@@ -1,6 +1,7 @@
 import random
 
 import requests
+from bs4 import BeautifulSoup
 
 from tweet import Tweet
 
@@ -37,8 +38,9 @@ class Twitter_scroll:
         html = requests.get(url=self.BASE_URI.format(query=self.query, lang=self.lang), headers=HEADER)
 
         self.tweets = list(Tweet.from_html(html.text))  # .json()["items_html"]))
-        # self.pos = self.tweets.json()["min_position"]
-        print(html.text)
+        self.pos = BeautifulSoup(html.text, "html.parser").find("div", attrs={"class": "stream-container "})[
+            "data-min-position"]
+        print(len(self.tweets))
 
         # for tweet in tweets:
         #     print(tweet.user)
@@ -72,10 +74,11 @@ if __name__ == "__main__":
         counter += 1
 
     counter = 1
-    twitter.scroll()
-    for tweet in twitter.tweets:
-        print(f"================================{counter}回目=========================")
-        print(tweet.user)
-        print(tweet.icon)
-        print(tweet.text)
-        counter += 1
+    for i in range(5):
+        twitter.scroll()
+        for tweet in twitter.tweets:
+            print(f"================================{counter}回目=========================")
+            print(tweet.user)
+            print(tweet.icon)
+            print(tweet.text)
+            counter += 1
