@@ -42,7 +42,7 @@ search_result = []
 results = Twitter_scroll()
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/search/", methods=["GET", "POST"])
 def index():
     global search_result, results
 
@@ -56,14 +56,17 @@ def index():
 
         print(query)
         print(request.form["since"])
-        return redirect(f"/result/{query}")
+        return redirect(f"/search/{query}")
 
 
-@app.route("/result/<query>", methods=["GET", "POST"])
+@app.route("/search/<query>", methods=["GET", "POST"])
 def result(query):
     global search_result, results
 
     if request.method == "GET":
+        if query == "":
+            return render_template("twiken.html")
+
         results.search(query)
         search_result = results.tweets
         return render_template("twiken.html", results=search_result,
@@ -75,7 +78,7 @@ def result(query):
                            retweets=request.form["RT"], since=request.form["since"],
                            media=request.form["media"]).join_query()
 
-        return redirect(f"/result/{query}")
+        return redirect(f"/search/{query}")
 
 
 @app.route("/scroll", methods=["GET"])
@@ -85,7 +88,7 @@ def scroll():
     search_result = results.tweets
 
     print(len(search_result))
-    return redirect(f"/result/{results.query}")
+    return redirect(f"/search/{results.query}")
 
 
 if __name__ == "__main__":
