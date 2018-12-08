@@ -256,8 +256,8 @@
                         <div class="t-aligncenter">
                             <form method="post"><span style="font-size: 20px;">キーワード</span><br/>
                                 <input type="text" name="keyword" size="40" maxlength="20" required/></p>
-                                <p><span style="font-size: 20px;">いいねの数</span><br/>
-                                    <input type="number" name="favorite"/></p>
+                                <p><span style="font-size: 20px; ">いいねの数</span><br/>
+                                    <input type="number" name="favorite" value="<?=$address ?>"/></p>
                                 <p><span style="font-size: 20px;">RTの数</span><br/>
                                     <input type="number" name="RT"/></p>
                                 <p><span style="font-size: 20px;">いつから</span><br/>
@@ -274,7 +274,7 @@
                             <h2>検索結果</h2>
                         </div>
 
-                        <b><font size="6">検索ワード： {{ query }}</font></b><br>
+                        <b><font size="3">検索ワード： {{ query }}</font></b><br>
                             <br>
                             {% for result in results %}
                             <div style="background-color:white;">
