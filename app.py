@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, request, redirect
 
 from scroll import Twitter_scroll
@@ -92,4 +94,5 @@ def scroll():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))
+    app.run(debug=True, host="0.0.0.0", port=port)
