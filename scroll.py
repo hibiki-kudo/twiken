@@ -38,8 +38,11 @@ class Twitter_scroll:
         html = requests.get(url=self.BASE_URI.format(query=self.query, lang=self.lang), headers=HEADER)
 
         self.tweets = list(Tweet.from_html(html.text))  # .json()["items_html"]))
-        self.pos = BeautifulSoup(html.text, "html.parser").find("div", attrs={"class": "stream-container "})[
+        try:
+            self.pos = BeautifulSoup(html.text, "html.parser").find("div", attrs={"class": "stream-container "})[
             "data-min-position"]
+        except:
+            pass
         print(len(self.tweets))
 
         # for tweet in tweets:

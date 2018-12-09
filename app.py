@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 
 class TweetQuery:
-    def __init__(self, query="", faves="", retweets="", since="", until="", lang="", media="", from_="", to_=""):
+    def __init__(self, query="", faves="", retweets="", since="", until="", lang="", media="", within="", from_="",
+                 to_="", geocode="", verified=""):
         self.query = query
         self.faves = faves
         self.retweets = retweets
@@ -16,13 +17,16 @@ class TweetQuery:
         self.until = until
         self.lang = lang
         self.media = media
+        self.within = within
         self.from_ = from_
         self.to_ = to_
+        self.geocode = geocode
+        self.verified = verified
 
     def join_query(self):
-        if self.faves != "":
+        if self.faves != "0":
             self.query += " min_faves:" + self.faves
-        if self.retweets != "":
+        if self.retweets != "0":
             self.query += " min_retweets:" + self.retweets
         if self.since != "":
             self.query += " since:" + self.since
@@ -36,6 +40,10 @@ class TweetQuery:
             self.query += " from:" + self.from_
         if self.to_ != "":
             self.query += " to:" + self.to_
+        if self.geocode != "":
+            self.query += " geocode:" + self.geocode
+        if self.verified != "":
+            self.query = " filter:verified"
 
         return self.query
 
@@ -54,7 +62,8 @@ def index():
     if request.method == "POST":
         search_result.clear()
         query = TweetQuery(query=request.form["keyword"], faves=request.form["favorite"], retweets=request.form["RT"],
-                           since=request.form["since"], media=request.form["media"]).join_query()
+                           since=request.form["since"], until=request.form["until"], media=request.form["media"],
+                           lang=request.form["lang"], verified=request.form["verified"]).join_query()
 
         print(query)
         print(request.form["since"])
@@ -78,7 +87,7 @@ def result(query):
         search_result.clear()
         query = TweetQuery(query=request.form["keyword"], faves=request.form["favorite"],
                            retweets=request.form["RT"], since=request.form["since"],
-                           media=request.form["media"]).join_query()
+                           media=request.form["media"], lang=request.form["lang"]).join_query()
 
         return redirect(f"/search/{query}")
 
@@ -91,6 +100,22 @@ def scroll():
 
     print(len(search_result))
     return redirect(f"/search/{results.query}")
+
+
+#
+# from flask.ext.sqlalchemy import Pagination
+
+# @app.route('/search/<query>', defaults={'page': 1})
+# @app.route('/search/<query>/<int:page>')
+# def user_index(page):
+#     per_page = 20
+#
+#     name = request.args.get('name', '')
+#     p = User.query.filter((User.name.like('%' + name + '%')) | (not name)).\
+#         order_by(User.username.asc()).paginate(page,perpage)
+#
+#     return render_template( 'user.html', pagination=p,name=name)
+
 
 
 if __name__ == "__main__":
