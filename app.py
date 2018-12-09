@@ -36,14 +36,14 @@ class TweetQuery:
             self.query = self.query.replace(" ", " OR ")
         if self.user != "" and self.user_id != "":
             self.query += " " + self.user + ":" + self.user_id
+        if self.emotion != "":
+            self.query += " " + self.emotion
+        if self.reply != "":
+            self.query += " min_replies:" + self.reply
         if self.faves != "0":
             self.query += " min_faves:" + self.faves
         if self.retweets != "0":
             self.query += " min_retweets:" + self.retweets
-        if self.reply != "":
-            self.query += " min_replies:" + self.reply
-        if self.emotion != "":
-            self.query += " " + self.emotion
         if self.since != "":
             self.query += " since:" + self.since
         if self.until != "":
