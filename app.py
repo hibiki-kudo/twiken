@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 class TweetQuery:
-    def __init__(self, query="", user="", user_id="", faves="", retweets="", reply="", option="", pos="", neg="",
+    def __init__(self, query="", user="", user_id="", faves="", retweets="", reply="", option="", emotion="",
                  since="", until="", lang="", media="",
                  within="", near="", from_="",
                  to_="", geocode=["", "", ""], verified=""):
@@ -16,8 +16,7 @@ class TweetQuery:
         self.user = user
         self.user_id = user_id
         self.option = option
-        self.pos = pos
-        self.neg = neg
+        self.emotion = emotion
         self.faves = faves
         self.retweets = retweets
         self.reply = reply
@@ -43,10 +42,8 @@ class TweetQuery:
             self.query += " min_retweets:" + self.retweets
         if self.reply != "":
             self.query += " min_replies:" + self.reply
-        if self.pos != "":
-            self.query += " :)"
-        if self.neg != "":
-            self.query += " :("
+        if self.emotion != "":
+            self.query += " " + self.emotion
         if self.since != "":
             self.query += " since:" + self.since
         if self.until != "":
@@ -85,7 +82,7 @@ def index():
     if request.method == "POST":
         search_result.clear()
         query = TweetQuery(query=request.form["keyword"], user=request.form["user"], user_id=request.form["user_id"],
-                           faves=request.form["favorite"], retweets=request.form["RT"],
+                           faves=request.form["favorite"], retweets=request.form["RT"], emotion=request.form["emotion"],
                            since=request.form["since"], until=request.form["until"], media=request.form["media"],
                            lang=request.form["lang"], verified=request.form["verified"], near=request.form["near"],
                            within=request.form["within"],
@@ -112,7 +109,7 @@ def result(query):
     if request.method == "POST":
         search_result.clear()
         query = TweetQuery(query=request.form["keyword"], user=request.form["user"], user_id=request.form["user_id"],
-                           faves=request.form["favorite"], retweets=request.form["RT"],
+                           faves=request.form["favorite"], retweets=request.form["RT"], emotion=request.form["emotion"],
                            since=request.form["since"], until=request.form["until"], media=request.form["media"],
                            lang=request.form["lang"], verified=request.form["verified"], near=request.form["near"],
                            within=request.form["within"],
