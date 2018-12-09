@@ -31,6 +31,7 @@
 			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
 
 
+
     </script>
     <style type="text/css">
 img.wp-smiley,
@@ -45,6 +46,7 @@ img.emoji {
 	background: none !important;
 	padding: 0 !important;
 }
+
 
     </style>
     <link rel='stylesheet' id='dashicons-css' href='https://tweet-search.xyz/wp-includes/css/dashicons.min.css?ver=5.0'
@@ -640,8 +642,10 @@ img.emoji {
 
 
 
+
     </style>
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+
 
     </style>
     <style type="text/css" media="print">#wpadminbar { display:none; }</style>
@@ -652,6 +656,7 @@ img.emoji {
 		html { margin-top: 46px !important; }
 		* html body { margin-top: 46px !important; }
 	}
+
 
     </style>
     <meta name="twitter:partner" content="tfwp"/>
@@ -706,6 +711,7 @@ img.emoji {
                                 <p></p>
                                 <div class="cps-post-main h2-style01 h3-style01 h4-style01 entry-content  "
                                      itemprop="articleBody">
+                                    <h3>検索ワード: {{query}}</h3>
 
                                     <div class="t-aligncenter">
                                         <h2>検索結果</h2>
@@ -713,10 +719,12 @@ img.emoji {
                                     {% for result in results %}
                                     <div style="background-color:white;">
                                         <img src="{{result.icon}}" alt="アイコン" style="border-radius:50px;" align="left"/>
-                                        <font size="4"><b>{{result.fullname}}</b><a href="http://twitter.com/{{result.user}}"
-                                                                                    target="_blank"><br>@{{result.user}}</a></font><br><br>
+                                        <font size="4.5"><b>{{result.fullname}}</b><a
+                                                href="http://twitter.com/{{result.user}}"
+                                                target="_blank"><br>@{{result.user}}</a></font><br><br><br><br>
                                         <font size="5" color="#555555">{{result.text}}</font><br><br>
-                                        <a href="http://twitter.com/{{result.user}}/status/{{result.id}}" target="_blank">ツイートに移動</a><br>
+                                        <a href="http://twitter.com/{{result.user}}/status/{{result.id}}"
+                                           target="_blank">ツイートに移動</a><br>
                                         {% for img in result.media %}
                                         <img src="{{img}}" alt="">
                                         {% endfor %}
@@ -740,28 +748,39 @@ img.emoji {
                                         <div class="t-aligncenter">
                                             <form method="post"><span style="font-size: 20px;">キーワード</span><br>
                                                 <input type="text" name="keyword" size="40" maxlength="20"
-                                                       placeholder="キーワードを入力 #を付けるとタグ検索"><br>
-                                                <input type="text" name="or" size="40" maxlength="20"
-                                                       placeholder="orキーワード"><br>
-                                                <input type="text" name="-" size="40" maxlength="20"
-                                                       placeholder="除外するキーワード"><br><br>
+                                                       placeholder="キーワードを入力 #を付けるとタグ検索"><br><br>
 
-                                                <p><span style="font-size: 20px;">完全一致</span><br><span
-                                                        style="font-size: 20px;"><input type="radio" name="sinai"
-                                                                                        value="0"
-                                                                                        checked="checked">しない <input
-                                                        type="radio" name="translation" value="1">する<br><br>
 
-<input type="text" name="@" size="40" maxlength="20" placeholder="@検索"><br>
-<input type="text" name="or" size="40" maxlength="20" placeholder="From検索"><br>
-<input type="text" name="-" size="40" maxlength="20" placeholder="To検索"><br>
+                                                <p><span style="font-size: 20px;">オプション</span><br><span
+                                                        style="font-size: 20px;">
+                                                    <input type="radio" name="option" value=""
+                                                           checked="checked">AND</input>
+                                                    <input type="radio" name="option" value="OR">OR</input>
+                                                </span></p>
+
+
+                                                <!--<p><span style="font-size: 20px;">完全一致</span><br><span-->
+                                                <!--style="font-size: 20px;"><input type="radio" name="sinai"-->
+                                                <!--value="0"-->
+                                                <!--checked="checked">しない <input-->
+                                                <!--type="radio" name="translation" value="1">する<br>-->
+
+                                                <p><span style="font-size: 20px;">ユーザー検索</span><br><span
+                                                        style="font-size: 20px;">
+<input type="radio" name="user" value="" checked="checked">なし</input>
+                                                    <input type="radio" name="user" value="@">@</input>
+                                                    <input type="radio" name="user" value="from">from</input>
+                                                    <input type="radio" name="user" value="to">to</input><br>
+                                                    <input type="text" name="user_id" size="40" maxlength="20"
+                                                           placeholder="ユーザーID"></span></p>
 
                                                 <p><span style="font-size: 20px;">ポジティブ/ネガティブ検索</span><br><span
-                                                        style="font-size: 20px;"><input type="radio" name="no" value="0"
+                                                        style="font-size: 20px;"><input type="radio" name="emotion"
+                                                                                        value=""
                                                                                         checked="checked">なし <input
-                                                        type="radio" name=":)" value="1">ポジティブ <input type="radio"
-                                                                                                      name=":("
-                                                                                                      value="2">ネガティブ
+                                                        type="radio" name="emotion" value=":)">ポジティブ <input type="radio"
+                                                                                                            name="emotion"
+                                                                                                            value=":(">ネガティブ
 
                                                 <p><span style="font-size: 20px;">いいねの数</span>
                                                 <div style="display:inline-flex">
@@ -776,8 +795,6 @@ img.emoji {
                                                     </select>
                                                 </div>
                                                 </p>
-                                                <br>
-
 
                                                 <p><span style="font-size: 20px;">RTの数</span>
                                                 <div style="display:inline-flex">
@@ -792,20 +809,23 @@ img.emoji {
                                                     </select>
                                                 </div>
                                                 </p>
-                                                <br>
+
 
                                                 <p><span style="font-size: 20px;">リプライの数</span>
                                                 <div style="display:inline-flex">
-
-
                                                     <select name="reply">
                                                         <option value="0">0以上</option>
+                                                        <option value="5">5以上</option>
+                                                        <option value="10">10以上</option>
+                                                        <option value="20">20以上</option>
+                                                        <option value="30">30以上</option>
+                                                        <option value="40">40以上</option>
                                                         <option value="50">50以上</option>
                                                         <option value="100">100以上</option>
                                                     </select>
                                                 </div>
                                                 </p>
-                                                <br>
+
 
                                                 <span style="font-size: 20px;">いつから </span><input type="date" size="20"
                                                                                                   name="since"
@@ -814,22 +834,21 @@ img.emoji {
                                                                                                   name="until"
                                                                                                   style="width: 200px;"><br><br>
 
-                                                <p><span style="font-size: 20px;">ツイートした場所</span><br><input type="text"
-                                                                                                            size="20"
-                                                                                                            name="near"
-                                                                                                            style="width:
- 100px;" placeholder="場所を入力"></p>
-                                                <p><span style="font-size: 20px;">ツイートした場所からの距離(km)</span><br><input
+                                                <p><span style="font-size: 20px;">ツイートした場所と距離(km)</span><br><input
+                                                        type="text"
+                                                        size="20"
+                                                        name="near"
+                                                        style="width:
+ 100px;" placeholder="場所を入力"> <input
                                                         type="number" step="0.1"
                                                         size="20" name="within"
                                                         style="width: 100px;"
                                                         placeholder="km"></p>
 
-                                                <p><span style="font-size: 20px;">位置座標検索</span><br><input type="text"
-                                                                                                          size="20"
-                                                                                                          name="geocode"
-                                                                                                          placeholder="geocode:緯度,経度,範囲を入力"
-                                                                                                          style="width: 200px;">
+                                                <p><span style="font-size: 20px;">位置座標検索</span><br>
+                                                    <input type="number" name="x" step="0.00001" placeholder="経度">
+                                                    <input type="number" name="y" step="0.00001" placeholder="緯度">
+                                                    <input type="number" name="range" step="0.1" placeholder="範囲">
                                                 </p>
                                                 <a href="https://lab.syncer.jp/Tool/Geocoding/"
                                                    target="_blank">位置座標チェッカーでgeocodeを調べる</a><br><br><br>
@@ -864,6 +883,7 @@ img.emoji {
                                                                                     value="verified">なし
                                                 <p><input type="submit" value="検索" style="width: 100px; height: 50px;">
                                                 </p>
+                                            </form>
                                         </div>
 
                                         <div class="t-aligncenter">
@@ -871,13 +891,6 @@ img.emoji {
                                         </div>
                                         <p></p>
                                     </center>
-                                    <p></p>
-                                    <ul>
-                                        <li>{{ keyword }}で、いいねが{{ favorite }}以上、RTが{{ rt }}以上、{{ since }}以降の{{ content
-                                            }}ツイートを表示します。
-                                        </li>
-                                    </ul>
-                                    <p><!--検索結果のツイートを表示--><br><!--検査結果をシェアするボタン--><br><!--検索画面--></p>
 
 
                                     <p></p>
@@ -926,8 +939,8 @@ img.emoji {
                     <span id="privacy"><a href="https://tweet-search.xyz/privacy">プライバシーポリシー</a></span>
                     <span id="law"><a href="https://tweet-search.xyz/law">免責事項</a></span>
                     <span id="copyright" itemprop="copyrightHolder"><i class="far fa-copyright" aria-hidden="true"></i>&nbsp;2018&nbsp;&nbsp;ツイ検</span>
-        </div>
-    </div>
+                </div>
+            </div>
             <div class="clearfix"></div>
         </footer>
 
@@ -946,6 +959,7 @@ img.emoji {
 <script type="text/javascript">
 			document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
 
+
 </script>
 <![endif]-->
 <!--[if gte IE 9]><!-->
@@ -960,6 +974,7 @@ img.emoji {
 				b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
 			}());
 
+
 </script>
 <!--<![endif]-->
 <div id="wpadminbar" class="nojq nojs">
@@ -968,19 +983,8 @@ img.emoji {
 
         <ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
             <li id="wp-admin-bar-search" class="admin-bar-search">
-                <div class="ab-item ab-empty-item" tabindex="-1">
-                    <form action="https://tweet-search.xyz/" method="get" id="adminbarsearch"><input
-                            class="adminbar-input" name="s" id="adminbar-search" type="text" value=""
-                            maxlength="150"/><label for="adminbar-search" class="screen-reader-text">検索</label><input
-                            type="submit" class="adminbar-button" value="検索"/></form>
-                </div>
-            </li>
             <li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item" aria-haspopup="true"
-                                                                            href="https://tweet-search.xyz/wp-admin/profile.php">こんにちは、<span
-                    class="display-name">sh05</span> さん<img alt=''
-                                                            src='https://secure.gravatar.com/avatar/122dcb6cc230feb1208a68ce629251c9?s=26&#038;d=mm&#038;r=g'
-                                                            srcset='https://secure.gravatar.com/avatar/122dcb6cc230feb1208a68ce629251c9?s=52&#038;d=mm&#038;r=g 2x'
-                                                            class='avatar avatar-26 photo' height='26' width='26'/></a>
+                                                                            href="https://tweet-search.xyz/wp-admin/profile.php"></a>
                 <div class="ab-sub-wrapper">
                     <ul id="wp-admin-bar-user-actions" class="ab-submenu">
                         </li>
@@ -989,8 +993,6 @@ img.emoji {
             </li>
         </ul>
     </div>
-    <a class="screen-reader-shortcut"
-       href="https://tweet-search.xyz/wp-login.php?action=logout&#038;_wpnonce=7908b06f06">ログアウト</a>
 </div>
 
 
@@ -1071,6 +1073,7 @@ img.emoji {
 			}
 		}
 	});
+
 
 
 

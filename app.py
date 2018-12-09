@@ -8,15 +8,24 @@ app = Flask(__name__)
 
 
 class TweetQuery:
-    def __init__(self, query="", faves="", retweets="", since="", until="", lang="", media="", within="", from_="",
-                 to_="", geocode="", verified=""):
+    def __init__(self, query="", user="", user_id="", faves="", retweets="", reply="", option="", pos="", neg="",
+                 since="", until="", lang="", media="",
+                 within="", near="", from_="",
+                 to_="", geocode=["", "", ""], verified=""):
         self.query = query
+        self.user = user
+        self.user_id = user_id
+        self.option = option
+        self.pos = pos
+        self.neg = neg
         self.faves = faves
         self.retweets = retweets
+        self.reply = reply
         self.since = since
         self.until = until
         self.lang = lang
         self.media = media
+        self.near = near
         self.within = within
         self.from_ = from_
         self.to_ = to_
@@ -24,10 +33,20 @@ class TweetQuery:
         self.verified = verified
 
     def join_query(self):
+        if " " in self.query and self.option != "":
+            self.query = self.query.replace(" ", " OR ")
+        if self.user != "" and self.user_id != "":
+            self.query += " " + self.user + ":" + self.user_id
         if self.faves != "0":
             self.query += " min_faves:" + self.faves
         if self.retweets != "0":
             self.query += " min_retweets:" + self.retweets
+        if self.reply != "":
+            self.query += " min_replies:" + self.reply
+        if self.pos != "":
+            self.query += " :)"
+        if self.neg != "":
+            self.query += " :("
         if self.since != "":
             self.query += " since:" + self.since
         if self.until != "":
@@ -36,14 +55,18 @@ class TweetQuery:
             self.query += " lang:" + self.lang
         if self.media != "":
             self.query += " filter:" + self.media
+        if self.near != "":
+            self.query += " near:" + self.near
+        if self.within != "" and self.near != "":
+            self.query += f" within:{self.within}km"
         if self.from_ != "":
             self.query += " from:" + self.from_
         if self.to_ != "":
             self.query += " to:" + self.to_
-        if self.geocode != "":
-            self.query += " geocode:" + self.geocode
+        if self.geocode[0] != "" and self.geocode[1] != "" and self.geocode[2] != "":
+            self.query += f" geocode:{self.geocode[0]},{self.geocode[1]},{self.geocode[2]}km"
         if self.verified != "":
-            self.query = " filter:verified"
+            self.query += " exclude:verified"
 
         return self.query
 
@@ -61,9 +84,12 @@ def index():
 
     if request.method == "POST":
         search_result.clear()
-        query = TweetQuery(query=request.form["keyword"], faves=request.form["favorite"], retweets=request.form["RT"],
+        query = TweetQuery(query=request.form["keyword"], user=request.form["user"], user_id=request.form["user_id"],
+                           faves=request.form["favorite"], retweets=request.form["RT"],
                            since=request.form["since"], until=request.form["until"], media=request.form["media"],
-                           lang=request.form["lang"], verified=request.form["verified"]).join_query()
+                           lang=request.form["lang"], verified=request.form["verified"], near=request.form["near"],
+                           within=request.form["within"],
+                           geocode=[request.form["x"], request.form["y"], request.form["range"]]).join_query()
 
         print(query)
         print(request.form["since"])
@@ -85,9 +111,12 @@ def result(query):
 
     if request.method == "POST":
         search_result.clear()
-        query = TweetQuery(query=request.form["keyword"], faves=request.form["favorite"],
-                           retweets=request.form["RT"], since=request.form["since"],
-                           media=request.form["media"], lang=request.form["lang"]).join_query()
+        query = TweetQuery(query=request.form["keyword"], user=request.form["user"], user_id=request.form["user_id"],
+                           faves=request.form["favorite"], retweets=request.form["RT"],
+                           since=request.form["since"], until=request.form["until"], media=request.form["media"],
+                           lang=request.form["lang"], verified=request.form["verified"], near=request.form["near"],
+                           within=request.form["within"],
+                           geocode=[request.form["x"], request.form["y"], request.form["range"]]).join_query()
 
         return redirect(f"/search/{query}")
 
@@ -115,7 +144,6 @@ def scroll():
 #         order_by(User.username.asc()).paginate(page,perpage)
 #
 #     return render_template( 'user.html', pagination=p,name=name)
-
 
 
 if __name__ == "__main__":
