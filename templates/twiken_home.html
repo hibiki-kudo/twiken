@@ -32,6 +32,7 @@
 
 
 
+
     </script>
     <style type="text/css">
 img.wp-smiley,
@@ -46,6 +47,7 @@ img.emoji {
 	background: none !important;
 	padding: 0 !important;
 }
+
 
 
     </style>
@@ -643,8 +645,10 @@ img.emoji {
 
 
 
+
     </style>
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+
 
 
     </style>
@@ -656,6 +660,7 @@ img.emoji {
 		html { margin-top: 46px !important; }
 		* html body { margin-top: 46px !important; }
 	}
+
 
 
     </style>
@@ -709,166 +714,154 @@ img.emoji {
 
 
                                 <p></p>
-                                <div class="cps-post-main h2-style01 h3-style01 h4-style01 entry-content  "
-                                     itemprop="articleBody">
-
-                                    <div class="t-aligncenter">
-                                        <h2>検索結果</h2>
-                                        <h3>検索ワード: {{query}}</h3>
-                                    </div>
-                                    {% for result in results %}
-                                    <div style="background-color:white;">
-                                        <img src="{{result.icon}}" alt="アイコン" style="border-radius:50px;" align="left"/>
-                                        <font size="4.5"><b>{{result.fullname}}</b><a
-                                                href="http://twitter.com/{{result.user}}"
-                                                target="_blank"><br>@{{result.user}}</a></font><br><br><br><br>
-                                        <font size="5" color="#555555">{{result.text}}</font><br><br>
-                                        <a href="http://twitter.com/{{result.user}}/status/{{result.id}}"
-                                           target="_blank">ツイートに移動</a><br>
-                                        {% for img in result.media %}
-                                        <img src="{{img}}" alt="">
-                                        {% endfor %}
-                                        <br>
-                                        <font>{{ result.timestamp.year }}/{{ result.timestamp.month }}/{{
-                                            result.timestamp.day }} {{ result.timestamp.hour }}:{{
-                                            result.timestamp.minute }}:{{ result.timestamp.second }}</font><br>
-                                        <a href="http://twitter.com/intent/tweet?in_reply_to={{result.id}}&original_referer=https://buzz-matome.xyz/"
-                                           target="_blank">リプライ: {{result.replies}}</a>&ensp;
-                                        <a href="http://twitter.com/intent/favorite?tweet_id={{result.id}}&original_referer=https://buzz-matome.xyz/"
-                                           target="_blank">♡: {{result.likes}}</a>&ensp;
-                                        <a href="http://twitter.com/intent/retweet?tweet_id={{result.id}}&original_referer=https://buzz-matome.xyz/"
-                                           target="_blank">RT: {{result.retweets}}</a>&ensp;
-                                        <br>
-                                    </div>
-                                    <br>
-                                    <hr size="5" style="background-color:#CCCCCC;">
-                                    <br>
+                                {% for result in results %}
+                                <div style="background-color:white;">
+                                    <img src="{{result.icon}}" alt="アイコン" style="border-radius:50px;" align="left"/>
+                                    <font size="4.5"><b>{{result.fullname}}</b><a
+                                            href="http://twitter.com/{{result.user}}"
+                                            target="_blank"><br>@{{result.user}}</a></font><br><br><br><br>
+                                    <font size="5" color="#555555">{{result.text}}</font><br><br>
+                                    <a href="http://twitter.com/{{result.user}}/status/{{result.id}}"
+                                       target="_blank">ツイートに移動</a><br>
+                                    {% for img in result.media %}
+                                    <img src="{{img}}" alt="">
                                     {% endfor %}
-                                    <center>
-                                        <div class="t-aligncenter">
-                                            <h2>Twitter検索</h2>
-                                        </div>
-                                        <div class="t-aligncenter">
-                                            <form method="post"><span style="font-size: 20px;">キーワード</span><br>
-                                                <input type="text" name="keyword" size="40" maxlength="100"
-                                                       placeholder="キーワードを入力 #を付けるとタグ検索"><br><br>
+                                    <br>
+                                    <a href="http://twitter.com/intent/tweet?in_reply_to={{result.id}}&original_referer=https://buzz-matome.xyz/"
+                                       target="_blank">リプライ: {{result.replies}}</a>&ensp;
+                                    <a href="http://twitter.com/intent/favorite?tweet_id={{result.id}}&original_referer=https://buzz-matome.xyz/"
+                                       target="_blank">♡: {{result.likes}}</a>&ensp;
+                                    <a href="http://twitter.com/intent/retweet?tweet_id={{result.id}}&original_referer=https://buzz-matome.xyz/"
+                                       target="_blank">RT: {{result.retweets}}</a>&ensp;
+                                    <br>
+                                </div>
+                                <br>
+                                <hr size="5" style="background-color:#CCCCCC;">
+                                <br>
+                                {% endfor %}
+                                <center>
+                                    <div class="t-aligncenter">
+                                        <h2>Twitter検索</h2>
+                                    </div>
+                                    <div class="t-aligncenter">
+                                        <form method="post"><span style="font-size: 20px;">キーワード</span><br>
+                                            <input type="text" name="keyword" size="40" maxlength="100"
+                                                   placeholder="キーワードを入力 #を付けるとタグ検索"><br><br>
 
 
-                                                <p><span style="font-size: 20px;">オプション</span><br><span
-                                                        style="font-size: 20px;">
+                                            <p><span style="font-size: 20px;">オプション</span><br><span
+                                                    style="font-size: 20px;">
                                                     <input type="radio" name="option" value=""
                                                            checked="checked">AND</input>
-                                                    <input type="radio" name="option" value="OR">OR</input>
+                                                <input type="radio" name="option" value="OR">OR</input>
                                                 </span></p>
 
 
-                                                <!--<p><span style="font-size: 20px;">完全一致</span><br><span-->
-                                                <!--style="font-size: 20px;"><input type="radio" name="sinai"-->
-                                                <!--value="0"-->
-                                                <!--checked="checked">しない <input-->
-                                                <!--type="radio" name="translation" value="1">する<br>-->
+                                            <!--<p><span style="font-size: 20px;">完全一致</span><br><span-->
+                                            <!--style="font-size: 20px;"><input type="radio" name="sinai"-->
+                                            <!--value="0"-->
+                                            <!--checked="checked">しない <input-->
+                                            <!--type="radio" name="translation" value="1">する<br>-->
 
-                                                <p><span style="font-size: 20px;">ユーザー検索</span><br><span
-                                                        style="font-size: 20px;">
+                                            <p><span style="font-size: 20px;">ユーザー検索</span><br><span
+                                                    style="font-size: 20px;">
 <input type="radio" name="user" value="" checked="checked">なし</input>
-                                                    <input type="radio" name="user" value="@">@</input>
-                                                    <input type="radio" name="user" value="from">from</input>
-                                                    <input type="radio" name="user" value="to">to</input><br>
+                                                <input type="radio" name="user" value="@">@</input>
+                                                <input type="radio" name="user" value="from">from</input>
+                                                <input type="radio" name="user" value="to">to</input><br>
                                                     <input type="text" name="user_id" size="40" maxlength="20"
                                                            placeholder="ユーザーID"></span></p>
 
-                                                <p><span style="font-size: 20px;">ポジティブ/ネガティブ検索</span><br><span
-                                                        style="font-size: 20px;"><input type="radio" name="emotion"
-                                                                                        value=""
-                                                                                        checked="checked">なし</input>
-                                                    <input type="radio" name="emotion" value=":)">ポジティブ </input>
-                                                    <input type="radio" name="emotion" value=":(">ネガティブ </input></span>
+                                            <p><span style="font-size: 20px;">ポジティブ/ネガティブ検索</span><br><span
+                                                    style="font-size: 20px;"><input type="radio" name="emotion"
+                                                                                    value=""
+                                                                                    checked="checked">なし</input>
+                                                <input type="radio" name="emotion" value=":)">ポジティブ </input>
+                                                <input type="radio" name="emotion" value=":(">ネガティブ </input></span>
 
-                                                <p><span style="font-size: 20px;">いいねの数</span>
-                                                <div style="display:inline-flex">
-                                                    <select name="favorite">
-                                                        <option value="0">0以上</option>
-                                                        <option value="10">10以上</option>
-                                                        <option value="50">50以上</option>
-                                                        <option value="100">100以上</option>
-                                                        <option value="500">500以上</option>
-                                                        <option value="1000">1000以上</option>
-                                                        <option value="5000">5000以上</option>
-                                                        <option value="10000">10000以上</option>
-                                                    </select>
-                                                </div>
-                                                </p>
+                                            <p><span style="font-size: 20px;">いいねの数</span>
+                                            <div style="display:inline-flex">
+                                                <select name="favorite">
+                                                    <option value="0">0以上</option>
+                                                    <option value="50">50以上</option>
+                                                    <option value="100">100以上</option>
+                                                    <option value="500">500以上</option>
+                                                    <option value="1000">1000以上</option>
+                                                    <option value="5000">5000以上</option>
+                                                    <option value="10000">10000以上</option>
+                                                </select>
+                                            </div>
+                                            </p>
 
-                                                <p><span style="font-size: 20px;">RTの数</span>
-                                                <div style="display:inline-flex">
-                                                    <select name="RT">
-                                                        <option value="0">0以上</option>
-                                                        <option value="10">10以上</option>
-                                                        <option value="50">50以上</option>
-                                                        <option value="100">100以上</option>
-                                                        <option value="500">500以上</option>
-                                                        <option value="1000">1000以上</option>
-                                                        <option value="5000">5000以上</option>
-                                                        <option value="10000">10000以上</option>
-                                                    </select>
-                                                </div>
-                                                </p>
+                                            <p><span style="font-size: 20px;">RTの数</span>
+                                            <div style="display:inline-flex">
+                                                <select name="RT">
+                                                    <option value="0">0以上</option>
+                                                    <option value="50">50以上</option>
+                                                    <option value="100">100以上</option>
+                                                    <option value="500">500以上</option>
+                                                    <option value="1000">1000以上</option>
+                                                    <option value="5000">5000以上</option>
+                                                    <option value="10000">10000以上</option>
+                                                </select>
+                                            </div>
+                                            </p>
 
 
-                                                <p><span style="font-size: 20px;">リプライの数</span>
-                                                <div style="display:inline-flex">
-                                                    <select name="reply">
-                                                        <option value="0">0以上</option>
-                                                        <option value="5">5以上</option>
-                                                        <option value="10">10以上</option>
-                                                        <option value="20">20以上</option>
-                                                        <option value="30">30以上</option>
-                                                        <option value="40">40以上</option>
-                                                        <option value="50">50以上</option>
-                                                        <option value="100">100以上</option>
-                                                    </select>
-                                                </div>
-                                                </p>
+                                            <p><span style="font-size: 20px;">リプライの数</span>
+                                            <div style="display:inline-flex">
+                                                <select name="reply">
+                                                    <option value="0">0以上</option>
+                                                    <option value="5">5以上</option>
+                                                    <option value="10">10以上</option>
+                                                    <option value="20">20以上</option>
+                                                    <option value="30">30以上</option>
+                                                    <option value="40">40以上</option>
+                                                    <option value="50">50以上</option>
+                                                    <option value="100">100以上</option>
+                                                </select>
+                                            </div>
+                                            </p>
 
 
-                                                <span style="font-size: 20px;">いつから </span><input type="date" size="20"
-                                                                                                  name="since"
-                                                                                                  style="width: 200px;"><br>
-                                                <span style="font-size: 20px;">いつまで </span><input type="date" size="20"
-                                                                                                  name="until"
-                                                                                                  style="width: 200px;"><br><br>
+                                            <span style="font-size: 20px;">いつから </span><input type="date" size="20"
+                                                                                              name="since"
+                                                                                              style="width: 200px;"><br>
+                                            <span style="font-size: 20px;">いつまで </span><input type="date" size="20"
+                                                                                              name="until"
+                                                                                              style="width: 200px;"><br><br>
 
-                                                <p><span style="font-size: 20px;">ツイートした場所と距離(km)</span><br><input
-                                                        type="text"
-                                                        size="20"
-                                                        name="near"
-                                                        style="width:
+                                            <p><span style="font-size: 20px;">ツイートした場所と距離(km)</span><br><input
+                                                    type="text"
+                                                    size="20"
+                                                    name="near"
+                                                    style="width:
  100px;" placeholder="場所を入力"> <input
-                                                        type="number" step="0.1"
-                                                        size="20" name="within"
-                                                        style="width: 100px;"
-                                                        placeholder="km"></p>
+                                                    type="number" step="0.1"
+                                                    size="20" name="within"
+                                                    style="width: 100px;"
+                                                    placeholder="km"></p>
 
-                                                <p><span style="font-size: 20px;">位置座標検索</span><br>
-                                                    <input type="number" name="x" step="0.00001" placeholder="経度">
-                                                    <input type="number" name="y" step="0.00001" placeholder="緯度">
-                                                    <input type="number" name="range" step="0.1" placeholder="範囲">
-                                                </p>
-                                                <a href="https://lab.syncer.jp/Tool/Geocoding/"
-                                                   target="_blank">位置座標チェッカーでgeocodeを調べる</a><br><br><br>
+                                            <p><span style="font-size: 20px;">位置座標検索</span><br>
+                                                <input type="number" name="x" step="0.00001" placeholder="経度">
+                                                <input type="number" name="y" step="0.00001" placeholder="緯度">
+                                                <input type="number" name="range" step="0.1" placeholder="範囲">
+                                            </p>
+                                            <a href="https://lab.syncer.jp/Tool/Geocoding/"
+                                               target="_blank">位置座標チェッカーでgeocodeを調べる</a><br><br><br>
 
-                                                <p><span style="font-size: 20px;">投稿の種類</span><br><span
-                                                        style="font-size: 20px;"><input
-                                                        type="radio" name="media" value="" checked="checked">なし <input
-                                                        type="radio" name="media"
-                                                        value="images">画像 <input
-                                                        type="radio" name="media" value="videos">動画 <input type="radio"
-                                                                                                           name="media"
-                                                                                                           value="links">リンク</span>
-                                                </p>
-                                                <p><span style="font-size: 20px;">言語の種類</span><br><span
-                                                        style="font-size: 20px;"><select
-                                                        name="lang">
+                                            <p><span style="font-size: 20px;">投稿の種類</span><br><span
+                                                    style="font-size: 20px;"><input
+                                                    type="radio" name="media" value="" checked="checked">なし <input
+                                                    type="radio" name="media"
+                                                    value="images">画像 <input
+                                                    type="radio" name="media" value="videos">動画 <input type="radio"
+                                                                                                       name="media"
+                                                                                                       value="links">リンク</span>
+                                            </p>
+                                            <p><span style="font-size: 20px;">言語の種類</span><br><span
+                                                    style="font-size: 20px;"><select
+                                                    name="lang">
 <option value="">なし</option>
 <option value="ja">日本語</option>
 <option value="en">英語</option>
@@ -879,32 +872,31 @@ img.emoji {
 <option value="de">ドイツ語</option>
 <option value="fr">フランス語</option>
 </select>
-                                                <p><span style="font-size: 20px;">認証アカウント</span><br><span
-                                                        style="font-size: 20px;"><input
-                                                        type="radio" name="verified" value=""
-                                                        checked="checked">有り <input type="radio"
-                                                                                    name="verified"
-                                                                                    value="verified">なし
-                                                <p><input type="submit" value="検索" style="width: 100px; height: 50px;">
-                                                </p>
-                                            </form>
-                                        </div>
-
-
-                                        <p></p>
-                                    </center>
-
-
-                                    <p></p>
-
-
-                                    <div class="clearfix"></div>
-                                    <div class="adarea-box">
+                                            <p><span style="font-size: 20px;">認証アカウント</span><br><span
+                                                    style="font-size: 20px;"><input
+                                                    type="radio" name="verified" value=""
+                                                    checked="checked">有り <input type="radio"
+                                                                                name="verified"
+                                                                                value="verified">なし
+                                            <p><input type="submit" value="検索" style="width: 100px; height: 50px;">
+                                            </p>
+                                        </form>
                                     </div>
 
+                                    <p></p>
+                                </center>
 
+
+                                <p></p>
+
+
+                                <div class="clearfix"></div>
+                                <div class="adarea-box">
                                 </div>
+
+
                             </div>
+                        </div>
                     </article>
                 </section>
             </main>
@@ -962,6 +954,7 @@ img.emoji {
 			document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
 
 
+
 </script>
 <![endif]-->
 <!--[if gte IE 9]><!-->
@@ -975,6 +968,7 @@ img.emoji {
 				// The customizer requires postMessage and CORS (if the site is cross domain)
 				b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
 			}());
+
 
 
 </script>
@@ -1075,6 +1069,7 @@ img.emoji {
 			}
 		}
 	});
+
 
 
 

@@ -77,7 +77,7 @@ def index():
     global search_result, results
 
     if request.method == "GET":
-        return render_template("twiken.html")
+        return render_template("twiken_home.html")
 
     if request.method == "POST":
         search_result.clear()
