@@ -723,7 +723,13 @@ img.emoji {
                                         <font size="4.5"><b>{{result.fullname}}</b><a
                                                 href="http://twitter.com/{{result.user}}"
                                                 target="_blank"><br>@{{result.user}}</a></font><br><br><br><br>
-                                        <font size="5" color="#555555">{{result.text}}</font><br><br>
+                                        <font size="5" color="#555555">
+                                            {% if "pic.twitter" in result.text%}
+                                            {{ result.text[:-26] }}
+                                            {% else %}
+                                            {{ result.text }}
+                                            {% endif %}
+                                        </font><br><br>
                                         <a href="http://twitter.com/{{result.user}}/status/{{result.id}}"
                                            target="_blank">ツイートに移動</a><br>
                                         {% for img in result.media %}
